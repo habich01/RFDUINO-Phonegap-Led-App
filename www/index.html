@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	    <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>	
+	</head>
+
+<!-- MAIN APP -->
+<!-- Runs Setup() from script.js to build up the first page of the app and listen for RFDUINO BLE -->
+	<body onload="setup();">
+		
+		<div id="container">	
+			<!-- First page of app: LOOKS FOR AND CONNECTS TO RFDUINO BLE-->
+			<div class="page" id="connectPage">
+ 				<h1>CONNECT TO RFDUINO</h1>
+              	<ul id="deviceList">No Rfduino Found</ul>
+              	<div class="AppButtons">
+            		<button id="refreshButton">Scan</button>
+            	</div>
+            </div>
+			
+			<!-- Second page of app: Buttons to Control the Rfduino-->
+			<div class="page" id="ControlPage">
+				<h1>RFDUINO LED-BUTTON EXAMPLE</h1>
+
+				<div id="ledButtons">
+					<button type="button" id="led0" onclick="toggle(0);"> B-LED OFF </button>
+					<button type="button" id="led1" onclick="toggle(1);"> B-LED ON </button>
+				</div> 
+
+				<div id="box">
+					<div id="DataComing"></div>
+				</div>
+
+				<div id="para"><p>Hello</p></div>
+
+				
+				<div class="AppButtons">
+					<button type="button" id="end" class ="buttons" onclick="end()"> END APP </button>	
+				</div>			
+			</div>
+
+
+		</div>
+
+
+		
+	</body>
+</html>
+
